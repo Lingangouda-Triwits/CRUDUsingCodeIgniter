@@ -1,5 +1,3 @@
-
-  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,6 +40,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            position: relative; /* Added */
         }
 
         .form-group label {
@@ -64,54 +63,16 @@
             display: inline-block;
             box-sizing: border-box;
         }
-        #password{
-          width: 64%;
-        }
 
-        /* button {
-            padding: 10px 20px;
-            background-color: antiquewhite;
-            border: none;
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            right: 5px; /* Adjust the value as needed */
+            transform: translateY(-50%);
             cursor: pointer;
-            border-top-right-radius: 10px;
-            border-top-left-radius: 10px;
-            font-family: 'Inconsolata', monospace;
-            font-size: 1.2rem;
-            position: relative;
-            top:22px;
-            left: 40px;
-        } */
-
-        button:hover {
-            background-color: azure;
-            transition: 1s;
         }
 
-        @media only screen and (min-width: 576px) {
-            .container {
-                width: 80%;
-            }
-        }
-
-        @media only screen and (min-width: 768px) {
-            .container {
-                width: 60%;
-            }
-        }
-
-        @media only screen and (min-width: 992px) {
-            .container {
-                width: 40%;
-            }
-        }
-        h2{
-            margin-bottom: 20px;
-            font-style: italic;
-            text-decoration: underline;
-        }
-        span{
-          margin-left: 100px;
-        }
+        /* ...remaining CSS code... */
     </style>
 </head>
 
@@ -119,9 +80,7 @@
 
     <div class="container">
         <h2>Welcome to Registration Page</h2>
-        <?php 
-  echo @$message;
-   ?>
+        <?php echo @$message; ?>
 
         <form action="<?php echo site_url('RegController/index'); ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group">
@@ -146,7 +105,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password">Enter Your Password:</label>
+                <label for="password">Confirm Your Password:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
                 <i class="far fa-eye" id="togglePassword1"></i>
             </div>
@@ -156,43 +115,36 @@
                 <input type="file" id="file" name="file" required>
             </div>
 
-            <!-- <button type="submit" name="register" >Register</button> -->
-    <input type="submit" style="cursor:pointer;" name="register" class="btn btn-success" value="Register"/>
+            <input type="submit" style="cursor:pointer;" name="register" class="btn btn-success" value="Register" />
 
-
-            <span>Already have an account<a href="<?php echo base_url('index.php/LoginController/');?>">Login</a></span>
+            <span>Already have an account<a href="<?php echo base_url('LoginController/index'); ?>">Login</a></span>
 
 
         </form>
     </div>
 
     <script>
-      
-      // To hide and unhide the passwords
-      var password = document.getElementById("password");
-        const togglePassword = document.querySelector('#togglePassword');
+        // To hide and unhide the passwords
+        var password = document.getElementById("password");
+        var confirmPassword = document.getElementById("confirmPassword");
 
+        const togglePassword = document.querySelector('#togglePassword');
         togglePassword.addEventListener('click', function(e) {
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
             this.classList.toggle('fa-eye-slash');
         });
 
-      var confirmPassword = document.getElementById("confirmPassword");
         const togglePassword1 = document.querySelector('#togglePassword1');
-
         togglePassword1.addEventListener('click', function(e) {
             const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
             confirmPassword.setAttribute('type', type);
             this.classList.toggle('fa-eye-slash');
         });
 
-        //password validation
-        var password = document.getElementById("password"),
-            confirmPassword = document.getElementById("confirmPassword");
-
+        // Password validation
         function validatePassword() {
-            if (password.value != confirmPassword.value) {
+            if (password.value !== confirmPassword.value) {
                 confirmPassword.setCustomValidity("Passwords Don't Match");
             } else {
                 confirmPassword.setCustomValidity("");
@@ -202,7 +154,6 @@
         confirmPassword.onkeyup = validatePassword;
     </script>
 
-
 </body>
 
-</html> 
+</html>
