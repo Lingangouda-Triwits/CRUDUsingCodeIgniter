@@ -65,7 +65,8 @@
             </tr>
             <tr>
                 <th>File</th>
-                <td><?php echo $this->session->userdata('user')['file_path']; ?></td>
+                <td><img src="<?php echo base_url('uploads/' .$this->session->userdata('user')['file_path']);?>" width="200" height="100"> 
+                </td>
             </tr>
         </table>
     </div>
