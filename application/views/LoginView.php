@@ -126,7 +126,7 @@
             </div>
 
             <input type="submit" name="login" class="btn btn-success" value="Login"/>
-            <span>Don't have an account<a href="<?php echo base_url('RegController/index');?>">Register</a></span>
+            <span>Don't have an account<a href="<?php echo base_url('index.php/RegController/index');?>">Register</a></span>
 
         </form>
     </div>

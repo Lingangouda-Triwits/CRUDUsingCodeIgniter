@@ -72,7 +72,36 @@
             cursor: pointer;
         }
 
-        /* ...remaining CSS code... */
+        button:hover {
+            background-color: azure;
+            transition: 1s;
+        }
+
+        @media only screen and (min-width: 576px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .container {
+                width: 60%;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            .container {
+                width: 40%;
+            }
+        }
+        h2{
+            margin-bottom: 20px;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        span{
+          margin-left: 100px;
+        }
     </style>
 </head>
 
@@ -117,7 +146,7 @@
 
             <input type="submit" style="cursor:pointer;" name="register" class="btn btn-success" value="Register" />
 
-            <span>Already have an account<a href="<?php echo base_url('LoginController/index'); ?>">Login</a></span>
+            <span>Already have an account<a href="<?php echo base_url('index.php/LoginController/index'); ?>">Login</a></span>
 
 
         </form>
