@@ -114,7 +114,7 @@
         <form action="<?php echo site_url('RegController/index'); ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="fullname">Enter Your Full Name:</label>
-                <input type="text" id="fullname" name="name" required>
+                <input type="text" id="fullname" name="name" pattern="[a-zA-Z\s]+" required>
             </div>
 
             <div class="form-group">
