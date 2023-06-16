@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Data</title>
 </head>
 <body>
-
-<div class="container">
-  <h2>Welcome to Dashboard</h2>
-</div>
-
+  
+    <h2>User Profile</h2>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><?php echo $res['name']; ?></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><?php echo $res['email']; ?></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><?php echo $res['phone']; ?></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><?php echo $res['password']; ?></td>
+      </tr>
+      <tr>
+        <td>File:</td>
+        <td><?php echo $res['file_path']; ?></td>
+    </tr>
+    </table>
 </body>
 </html>
