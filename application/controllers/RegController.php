@@ -35,6 +35,13 @@ class RegController extends CI_Controller {
 
         $this->load->view('RegView', $data); // Pass the $data variable to the view
     }
+
+
+    public function showAllData(){
+        if ($this->input->post('view')) {
+
+        }
+    }
 }
 
 ?>

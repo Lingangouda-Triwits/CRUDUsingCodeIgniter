@@ -148,6 +148,7 @@
 
             <span>Already have an account<a href="<?php echo base_url('index.php/LoginController/index'); ?>">Login</a></span>
 
+            <input type="submit" style="cursor:pointer;" name="view" class="btn btn-success" value="View All Users" />
 
         </form>
     </div>
