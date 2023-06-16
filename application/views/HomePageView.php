@@ -42,7 +42,7 @@
     <div class="container">
         <a href="<?php echo base_url('index.php/RegController/index'); ?>">Register</a>
         <a href="<?php echo base_url('index.php/LoginController/index'); ?>">Login</a>
-        <a href="<?php echo base_url('index.php/'); ?>">View All Users</a>
+        <a href="<?php echo base_url('index.php/AllUsersController/index'); ?>">View All Users</a>
     </div>
 </body>
 </html>
