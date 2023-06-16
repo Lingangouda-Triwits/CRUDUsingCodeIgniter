@@ -68,6 +68,21 @@
                 <td><img src="<?php echo base_url('uploads/' .$this->session->userdata('user')['file_path']);?>" width="200" height="100"> 
                 </td>
             </tr>
+
+            <tr>
+    <th>File</th>
+    <td>
+    <?php
+        $file_path = $this->session->userdata('user')['file_path'];
+        if ($file_path) {
+            $file_url = base_url('uploads/' . $file_path);
+            echo '<a href="' . $file_url . '" target="_blank">Download File</a>';
+        } else {
+            echo 'No file uploaded.';
+        }
+    ?>
+    </td>
+</tr>
         </table>
     </div>
 </body>
