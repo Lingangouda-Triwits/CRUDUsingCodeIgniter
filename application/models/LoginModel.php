@@ -14,7 +14,7 @@ class LoginModel extends CI_Model
             $row1 = $query->num_rows();
 
             if ($row1) {
-                redirect('http://localhost/codeigniter/index.php/LoginController/welcome');
+                redirect('http://localhost/codeigniter/index.php/LoginController/fetch');
             } else {
                 $data['message'] = "<h3 style='color:red'>Password is not correct.</h3>";
                 $this->load->view('LoginView', @$data);

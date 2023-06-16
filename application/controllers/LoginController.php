@@ -22,8 +22,8 @@ class LoginController extends CI_Controller
 	}
 	}
 
-	public function welcome(){
-		$this->load->view('WelcomeView');
+	public function fetch(){
+		$this->load->view('FetchView');
 	}
 }
 ?>
