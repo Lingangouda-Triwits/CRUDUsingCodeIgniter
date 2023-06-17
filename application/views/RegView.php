@@ -23,7 +23,7 @@
             align-items: center;
             min-height: 100vh;
             /* background-color: antiquewhite; */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/Template1.jpeg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('<?php echo base_url("images/Template2.jpg"); ?>');
             width: 100vw;
             background-size: cover;
             background-position: center;

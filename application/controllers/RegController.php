@@ -1,4 +1,6 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
 class RegController extends CI_Controller {
     public function index() {
         $data['message'] = ''; // Initialize the message variable
