@@ -22,7 +22,11 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: antiquewhite;
+            /* background-color: antiquewhite; */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("images/Template1.jpeg");
+            width: 100vw;
+            background-size: cover;
+            background-position: center;
         }
 
         .container {
@@ -129,7 +133,7 @@
 
             <div class="form-group">
                 <label for="password">Enter Your Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain atleast one number and one uppercase and lowercase letter , and at least 8 or more characters" required>
                 <i class="far fa-eye" id="togglePassword"></i>
             </div>
 
@@ -141,7 +145,8 @@
 
             <div class="form-group">
                 <label for="email">Upload your file:</label>
-                <input type="file" id="file" name="file" required>
+                <!-- <input type="file" id="file" name="file" required> -->
+                <input type="file" id="file" name="file[]" multiple required>
             </div>
 
             <input type="submit" style="cursor:pointer;" name="register" class="btn btn-success" value="Register" />

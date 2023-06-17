@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Users</title>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -44,24 +45,32 @@
 </head>
 <body>
     <h2>All Registered Users</h2>
-    <table>
+
+
+
+    <table class="table" id="myTable">
+      <thead>
         <tr>
-            <th>Sl.No.</th>
+          <th>Sl.No.</th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Password</th>
             <th>File</th>
+            <th>Created_On</th>
+
         </tr>
+      </thead>
+      <tbody>
         <?php $slno = 0;?>
         <?php foreach ($users as $user) { $slno+=1;?>
             <tr>
-                <td><?php echo $slno; ?></td>
-                <td><?php echo $user['name']; ?></td>
-                <td><?php echo $user['email']; ?></td>
-                <td><?php echo $user['phone']; ?></td>
-                <td><?php echo $user['password']; ?></td>
-                <td><?php
+            <td><?php echo $slno; ?></td>
+            <td><?php echo $user['name']; ?></td>
+            <td><?php echo $user['email']; ?></td>
+            <td><?php echo $user['phone']; ?></td>
+            <td><?php echo $user['password']; ?></td>
+            <td><?php
                         $file_path = $user['file_path'];
                         if ($file_path) {
                             $file_url = base_url('uploads/' . $file_path);
@@ -70,8 +79,26 @@
                                 echo 'No file uploaded.';
                             }
                     ?></td>
+            <td><?php echo $user['CreateAt']; ?></td>
+
             </tr>
-        <?php  } ?>
+
+
+        <?php } ?>
+
+      </tbody>
     </table>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#myTable').DataTable();
+
+    });
+  </script>
 </body>
 </html>
